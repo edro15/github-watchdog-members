@@ -2,7 +2,7 @@
 import twilio from 'twilio';
 
 const axios = require('axios');
-var Set = require("collections/set");
+var Set = require('collections/set');
 
 
  /**
@@ -39,9 +39,12 @@ function getDataDiffs(arr_old, arr_new) {
 */
 module.exports = function(context, cb) {
   
+  // Setting organization
+  var organization = context.query.org || 'auth0';
+
   // Getting data from github
   // NOTE: limited to 100 members. Requires paginator to support more members.
-  axios.get('https://api.github.com/orgs/auth0/members', { 
+  axios.get('https://api.github.com/orgs/' + organization + '/members', { 
         params: {
           per_page: 100
         }
@@ -78,7 +81,7 @@ module.exports = function(context, cb) {
       
           } else {
             console.log('Storage up to date');
-            cb(null, { members: { total: members.length, names: members } });
+            cb(null, { members: { total: members.length, names: members }, notification: 'NONE' });
           }
         });
 

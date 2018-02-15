@@ -1,0 +1,21 @@
+{
+  "name": "github-watchdog-members",
+  "version": "0.0.1",
+  "description": "A function to periodically query GitHub organization members and notify changes via SMS using Twilio",
+  "main": "index.js",
+  "author": "Erica Pescio",
+  "license": "MIT",
+  "dependencies": {
+    "twilio": "^2.2.1",
+    "collections": "^5.1.2",
+    "axios": "^0.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edro15/github-watchdog-members.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edro15/github-watchdog-members/issues"
+  },
+  "homepage": "https://github.com/edro15/github-watchdog-members#readme"
+}
